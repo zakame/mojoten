@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <title><%= title %></title>
+    %= javascript 'https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'
+    %= javascript begin
+      if (typeof jQuery == 'undefined') {
+        var e = document.createElement('script');
+        e.src  = '/js/jquery.js';
+        e.type = 'text/javascript';
+        document.getElementsByTagName('head')[0].appendChild(e);
+      }
+    % end
+    %= javascript 'http://www.modernizr.com/downloads/modernizr-latest.js'
+    %= stylesheet '/css/mojoten.css'
+  </head>
+  <body>
+    <header id="title">
+      <hgroup>
+        <h1><%= title %></h1>
+        <h2>One of many Mojo Models...</h2>
+      </hgroup>
+    </header>
+<%= content %>
+  </body>
+</html>

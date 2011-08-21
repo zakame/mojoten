@@ -13,6 +13,11 @@ sub startup {
 
   # Normal route to controller
   $r->route('/welcome')->to('example#welcome');
+
+  # Random quotes
+  $r->route('/randomquote')->to('random_quote#index');
+  $r->route('/randomquote/quote')->to('random_quote#quote');
+  $r->route('/randomquote/show_all')->to('random_quote#show_all');
 }
 
 1;
