@@ -1,0 +1,9 @@
+* 10 Mojolicious Models in 10 Days
+
+This project is inspired by [[http://sedition.com/a/2733][10 Catalyst Models in 10 Days]] by Ashley Pond
+V, using [[http://mojolicious.org][Mojolicious]] for the web framework instead of Catalyst.  I
+started this mainly so I can practice writing Modern Perl while also
+learning more about writing good HTML5 and JavaScript.  Aside from
+Mojolicious, I will also be using [[http://jquery.com][jQuery]] (bundled with Mojolicious) and
+[[http://www.modernizr.com][Modernizr]] for UI and decoration, as well as web fonts from
+[[http://www.fontsquirrel.com][Font Squirrel]] and [[http://www.google.com/webfonts][Google Web Fonts]].
