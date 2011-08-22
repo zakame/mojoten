@@ -60,25 +60,6 @@ h1 {
     margin: 0;
     text-shadow: #aaa 5px 5px 5px;
 }
-section {
-    float: right;
-    text-align: justify;
-    width: 200px;
-}
-section h2 {
-    background: url(modernizr-logo.gif) 53px 5px no-repeat;
-    margin: 0;
-    height: 70px;
-    text-indent: -9999px;
-    width: 200px;
-}
-section p {
-    font-size: 12px;
-    line-height: 16px;
-    margin: 0 0 20px;
-    padding: 0 40px 0 0;
-    width: 200px;
-}
 ol {
     font-size: 12px;
     line-height: 18px;
