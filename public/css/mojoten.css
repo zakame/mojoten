@@ -12,6 +12,7 @@ body {
     padding: 0;
     text-align: center;
 }
+header, hgroup, article { display: block; }
 a:link,
 a:visited {
     color: #941350;
