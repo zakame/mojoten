@@ -24,7 +24,7 @@ sub startup {
   $self->hook(after_dispatch => sub {
     my $tx   = shift;
     my $type = $tx->res->headers->content_type;
-    return unless $type =~ /json/;
+    return unless $type and $type =~ /json/;
     $tx->res->headers->header(
       Expires => Mojo::Date->new(time-365*86400)
     );
