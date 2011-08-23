@@ -7,3 +7,49 @@ learning more about writing good HTML5 and JavaScript.  Aside from
 Mojolicious, I will also be using [[http://jquery.com][jQuery]] (bundled with Mojolicious) and
 [[http://www.modernizr.com][Modernizr]] for UI and decoration, as well as web fonts from
 [[http://www.fontsquirrel.com][Font Squirrel]] and [[http://www.google.com/webfonts][Google Web Fonts]].
+
+** Goals
+
+Aside from the aforementioned learning goals, I'm also going for the
+following:
+
+- Despite the name "Mojo Models", I'll be writing the models in such a
+  way as they can be made standalone as possible, preferring to either
+  use them directly in a Mojolicious::Controller, or interact with them
+  through an adaptor class that pulls them in via Mojo::Base.  That way,
+  I can pull these models out when I want, say, to do a Dancer-based
+  practice project instead of Mojo ;)
+
+- Practice good design as much as possible.  Not only in code, but also
+  on visual/print design as well.  HTML5/CSS3 offers a richer set of
+  possibilities for web designs than ever before; make sure I get to use
+  it!
+
+- Write tests for the models, where applicable.  This especially gets
+  difficult as the practice calls for enhancing the app using
+  JavaScript, so I need to learn of ways to do proper testing...
+
+*** TODO Figure out how to test JavaScript-enhanced webapps from Perl
+
+** The Models
+
+*** DONE [[http://localhost:3000/randomquote][RandomQuote]]: get a random quote (or all quotes) from a <DATA>-base
+
+This is a simple, non-OO model that stores a list of quotes in its own
+<DATA> handle for retrieval via a couple of subs.  Ashley's original app
+emitted these quotations in either plain text or as a fragment of
+markup; my app expands on this by emitting quotes in JSON and using
+JavaScript to render them properly on a page.
+
+*** DONE [[http://localhost:3000/moonphase][MoonPhase]]: show phase-of-moon and illumination
+
+Another simple model, also non-OO, but uses additional code from
+Astro::MoonPhase and Time::ParseDate.  Again, app is different from the
+original by emitting in JSON to be read by JavaScript filling a section
+of the page, as well as being able to handle bad input correctly (by
+bailing out in case of bad input via Try::Tiny.)  Still needs test
+scripts though, at least for the Perl parts.
+
+**** TODO Write tests for MoonPhase
+
+*** TODO CoverImages: get some product cover images from Amazon
