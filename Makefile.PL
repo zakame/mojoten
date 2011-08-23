@@ -7,7 +7,7 @@ use ExtUtils::MakeMaker;
 
 WriteMakefile(
   NAME         => 'Mojo::TenInTen',
-  VERSION_FROM => 'lib/Mojo/TenInTen.pm',
+  VERSION      => '0.01',
   AUTHOR       => 'Zak B. Elep <zakame@cpan.org>',
   EXE_FILES    => ['script/mojo_ten_in_ten'],
   PREREQ_PM    => {
