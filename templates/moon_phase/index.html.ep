@@ -1,0 +1,17 @@
+% layout 'mojoten';
+% title 'Moon Phase';
+    <article>
+      <header>
+        <h1>What's up, Moon?</h1>
+      </header>
+      <p>Will I turn into a werewolf tonight, or is the <a
+      href="http://en.wikipedia.org/wiki/Manananggal">Manananggal</a>
+      prowling...</p>
+      <%= form_for '/moonphase/check' => (id => 'm', method => 'post') => begin %>
+        <%= input_tag 'time', placeholder => 'Enter a time, like, NOW' %>
+        <%= submit_button %>
+      <% end %>
+      <section id="result"></section>
+    </article>
+    %= javascript '/js/jquery.form.js'
+    %= javascript '/js/moonphase.js'

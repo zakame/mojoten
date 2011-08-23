@@ -19,6 +19,11 @@ sub startup {
   $r->route('/randomquote/quote')->to('random_quote#quote');
   $r->route('/randomquote/show_all')->to('random_quote#show_all');
 
+  # Moon phase
+  $r->route('/moonphase')->to('moon_phase#index');
+  $r->route('/moonphase/check')->to('moon_phase#check');
+  $r->route('/moonphase/*time')->to('moon_phase#check');
+
   # prevent caching for JSON responses for IE (taken from
   # http://toroid.org/ams/etc/mojolicious-static-resources)
   $self->hook(after_dispatch => sub {
