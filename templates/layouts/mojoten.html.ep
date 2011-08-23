@@ -15,5 +15,10 @@
       </hgroup>
     </header>
 <%= content %>
+    <footer>
+      <p>Made with <a href="http://mojolicio.us">Mojolicious</a>.
+      Code by <a href="http://zakame.net">Zak B. Elep</a>.  Fork me
+      on <a href="https://github.com/zakame/mojoten">Github</a>.</p>
+    </footer>
   </body>
 </html>
