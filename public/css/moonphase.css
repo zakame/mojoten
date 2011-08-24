@@ -1,0 +1,8 @@
+form p input {
+    padding: 4px;
+    margin: 0;
+}
+form p label {
+    margin: 5px 5px 5px 7px;
+    padding: 0;
+}
