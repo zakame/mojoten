@@ -12,15 +12,23 @@ sub check {
 
   try {
     my $i = illumination($time) * 100;
-    $self->render(
-      json => {
-        time        => $time,
-        illuminated => sprintf("%.1f", $i),
-        phase       => is_waxing($time) ? 'waxing' : 'waning'
-      }
+    my $r = {
+      time        => $time,
+      illuminated => sprintf("%.1f", $i),
+      phase       => is_waxing($time) ? 'waxing' : 'waning'
+    };
+    $self->respond_to(
+      json => {json     => $r},
+      html => {template => 'moon_phase/result', result => $r},
     );
   }
-  catch { $self->render_exception("Server Error: $_") };
+  catch {
+    my $e = "What, that's no date or time I can recognize!";
+    $self->respond_to(
+      json => {json => {error => $e}},
+      html => {template => 'moon_phase/result', result => $e},
+    );
+  };
 }
 
 1;

@@ -14,7 +14,7 @@
           <%= submit_button %>
         </p>
         <% end %>
-      <section id="result"></section>
+      <div id="result"></div>
     </article>
     %= stylesheet '/css/moonphase.css'
     %= javascript '/js/jquery.form.js'
