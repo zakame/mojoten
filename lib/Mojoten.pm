@@ -1,4 +1,4 @@
-package Mojo::TenInTen;
+package Mojoten;
 use Mojo::Base 'Mojolicious';
 
 # This method will run once at server start

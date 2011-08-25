@@ -1,4 +1,4 @@
-package Mojo::TenInTen::RandomQuote;
+package Mojoten::RandomQuote;
 use Mojo::Base 'Mojolicious::Controller';
 use Model::RandomQuote;
 

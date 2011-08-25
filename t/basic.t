@@ -4,7 +4,7 @@ use Mojo::Base -strict;
 use Test::More tests => 4;
 use Test::Mojo;
 
-use_ok 'Mojo::TenInTen';
+use_ok 'Mojoten';
 
-my $t = Test::Mojo->new('Mojo::TenInTen');
+my $t = Test::Mojo->new('Mojoten');
 $t->get_ok('/welcome')->status_is(200)->content_like(qr/Mojolicious/i);
