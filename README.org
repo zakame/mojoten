@@ -31,6 +31,17 @@ following:
 
 *** TODO Figure out how to test JavaScript-enhanced webapps from Perl
 
+** Getting Started
+
+To run this webapp, you need Mojolicious as well as a bunch of modules
+listed in the Makefile.PL; install them as needed.
+
+You may run the webapp using Mojo::Server::Morbo with the following
+command:
+
+  $ morbo script/mojoten
+  Server available at http://127.0.0.1:3000
+
 ** The Models
 
 *** DONE [[http://localhost:3000/randomquote][RandomQuote]]: get a random quote (or all quotes) from a <DATA>-base
