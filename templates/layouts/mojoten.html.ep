@@ -6,6 +6,7 @@
     %= javascript '/js/jquery.js'
     %= javascript '/js/modernizr-latest.js'
     %= stylesheet '/css/mojoten.css'
+    %= content_for 'header_extra'
   </head>
   <body>
     <header id="title">
