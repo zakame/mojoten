@@ -12,7 +12,7 @@
     <header id="title">
       <hgroup>
         <h1><%= title %></h1>
-        <h2>One of many Mojo Models...</h2>
+        <h2>An Exercise in Modern Perl and HTML5</h2>
       </hgroup>
     </header>
 <%= content %>

@@ -9,4 +9,7 @@ sub welcome {
   $self->render(message => 'Welcome to the Mojolicious Web Framework!');
 }
 
+# This renders the Mojoten index page
+sub index { shift->render(template => 'example/mojoten-index') }
+
 1;

@@ -1,0 +1,47 @@
+% layout 'mojoten';
+% title '10 Mojolicious Models';
+    <article>
+      <header>
+        <h1>About</h1>
+      </header>
+      <p>This project is inspired by <a
+      href="http://sedition.com/a/2733">10 Catalyst Models in 10
+      Days</a> by Ashley Pond V, using <a
+      href="http://mojolicious.org">Mojolicious</a> for the web
+      framework instead of Catalyst.  I started this mainly so I can
+      practice writing Modern Perl while also learning more about
+      writing good HTML5 and JavaScript.  Aside from Mojolicious, I will
+      also be using <a href="http://jquery.com">jQuery</a> (bundled with
+      Mojolicious) and <a href="http://www.modernizr.com">Modernizr</a>
+      for UI and decoration, as well as web fonts from <a
+      href="http://www.fontsquirrel.com">Font Squirrel</a> and <a
+      href="http://www.google.com/webfonts">Google Web Fonts</a>.</p>
+      <header>
+        <h1>The Models</h1>
+      </header>
+      <section>
+        <header>
+          <h2><%= link_to RandomQuote => 'randomquote' %></h2>
+          <p>Get a random quote (or all quotes) from a &lt;DATA&gt;-base</p>
+        </header>
+        <p>This is a simple, non-OO model that stores a list of quotes
+        in its own &lt;DATA&gt; handle for retrieval via a couple of
+        subs.  Ashley's original app emitted these quotations in either
+        plain text or as a fragment of markup; my app expands on this by
+        emitting quotes in JSON and using JavaScript to render them
+        properly on a page.</p>
+      </section>
+      <section>
+        <header>
+          <h2><%= link_to MoonPhase => 'moonphase' %></h2>
+          <p>Show phase-of-moon and illumination</p>
+        </header>
+        <p>Another simple model, also non-OO, but uses additional code
+        from Astro::MoonPhase and Time::ParseDate.  Again, app is
+        different from the original by emitting in JSON to be read by
+        JavaScript filling a section of the page, as well as being able
+        to handle bad input correctly (by bailing out in case of bad
+        input via Try::Tiny.)  Still needs test scripts though, at least
+        for the Perl parts.</p>
+      </section>
+    </article>

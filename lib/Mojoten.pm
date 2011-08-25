@@ -14,6 +14,9 @@ sub startup {
   # Normal route to controller
   $r->route('/welcome')->to('example#welcome');
 
+  # Mojoten index
+  $r->route('/')->to('example#index');
+
   # Random quotes
   $r->route('/randomquote')->to('random_quote#index');
   $r->route('/randomquote/quote')->to('random_quote#quote');

@@ -56,9 +56,18 @@ article header+p:first-line {
 h1 {
     /* color: #e33a89; */
     color: #003366;
-    font: 27px/27px Baskerville, Palatino, Palatino Linotype, Book Antiqua, Georgia, serif;
+    font: 27/27px Baskerville, Palatino, Palatino Linotype, Book Antiqua, Georgia, serif;
     margin: 0;
     text-shadow: #aaa 5px 5px 5px;
+}
+h2 {
+    /* color: #e33a89; */
+    color: #003366;
+    font: 18px/18px Baskerville, Palatino, Palatino Linotype, Book Antiqua, Georgia, serif;
+    margin: 10px 0;
+}
+h2+p {
+    margin: 0;
 }
 ol {
     font-size: 12px;
@@ -109,4 +118,13 @@ footer a {
     font: 42px/50px Silkscreen;
     margin: 0;
     text-shadow: none;
+}
+.fontface h2 {
+    font: 28px/32px Silkscreen;
+    margin: 0;
+    text-shadow: none;
+}
+.fontface h2+p {
+    font: 16px/18px Silkscreen;
+    margin: 0;
 }
