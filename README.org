@@ -29,8 +29,6 @@ following:
   difficult as the practice calls for enhancing the app using
   JavaScript, so I need to learn of ways to do proper testing...
 
-*** TODO Figure out how to test JavaScript-enhanced webapps from Perl
-
 ** Getting Started
 
 To run this webapp, you need Mojolicious as well as a bunch of modules
@@ -39,8 +37,8 @@ listed in the Makefile.PL; install them as needed.
 You may run the webapp using Mojo::Server::Morbo with the following
 command:
 
-  $ morbo script/mojoten
-  Server available at http://127.0.0.1:3000
+   : $ morbo script/mojoten
+   : Server available at http://127.0.0.1:3000
 
 ** The Models
 
@@ -60,7 +58,5 @@ original by emitting in JSON to be read by JavaScript filling a section
 of the page, as well as being able to handle bad input correctly (by
 bailing out in case of bad input via Try::Tiny.)  Still needs test
 scripts though, at least for the Perl parts.
-
-**** TODO Write tests for MoonPhase
 
 *** TODO CoverImages: get some product cover images from Amazon
