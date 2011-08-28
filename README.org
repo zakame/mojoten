@@ -53,7 +53,7 @@ JavaScript to render them properly on a page.
 *** DONE [[http://localhost:3000/moonphase][MoonPhase]]: show phase-of-moon and illumination
 
 Another simple model, also non-OO, but uses additional code from
-Astro::MoonPhase and Time::ParseDate.  Again, app is different from the
+Astro::MoonPhase and Date::Manip.  Again, app is different from the
 original by emitting in JSON to be read by JavaScript filling a section
 of the page, as well as being able to handle bad input correctly (by
 bailing out in case of bad input via Try::Tiny.)  Still needs test

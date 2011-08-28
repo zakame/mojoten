@@ -37,7 +37,7 @@
           <p>Show phase-of-moon and illumination</p>
         </header>
         <p>Another simple model, also non-OO, but uses additional code
-        from Astro::MoonPhase and Time::ParseDate.  Again, app is
+        from Astro::MoonPhase and Date::Manip.  Again, app is
         different from the original by emitting in JSON to be read by
         JavaScript filling a section of the page, as well as being able
         to handle bad input correctly (by bailing out in case of bad

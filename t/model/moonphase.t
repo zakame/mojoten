@@ -1,7 +1,7 @@
 #!/usr/bin/env perl
 use Modern::Perl;
 use Astro::MoonPhase;
-use Time::ParseDate;
+use Date::Manip::Date;
 use Test::More tests => 5;
 
 BEGIN {
@@ -9,10 +9,12 @@ BEGIN {
     or BAIL_OUT "Can't see the moon in cloudy skies";
 }
 
+my $date = Date::Manip::Date->new;
 my $time = "42 days ago at 5pm";
+$date->parse($time);
 is_deeply(
   [Model::MoonPhase::moonphase($time)],
-  [phase(parsedate($time))],
+  [phase($date->secs_since_1970_GMT)],
   "correct moon phase"
 );
 

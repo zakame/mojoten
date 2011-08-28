@@ -14,7 +14,7 @@ WriteMakefile(
     'Mojolicious'      => '1.80',
     'Modern::Perl'     => 0,
     'Astro::MoonPhase' => 0,
-    'Time::ParseDate'  => 0,
+    'Date::Manip    '  => 0,
     'Try::Tiny'        => 0
   },
   test => {TESTS => 't/*.t'}
