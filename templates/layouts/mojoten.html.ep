@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <title><%= title %></title>
-    %= javascript '/js/jquery.js'
+    %= javascript '/mojo/jquery/jquery.js'
     %= javascript '/js/modernizr-latest.js'
     %= stylesheet '/css/mojoten.css'
     %= content_for 'header_extra'
