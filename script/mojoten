@@ -16,7 +16,7 @@ Please visit http://mojolicio.us for detailed installation instructions.
 EOF
 
 # Application
-$ENV{MOJO_APP} ||= 'Mojoten';
+my $app ||= 'Mojoten';
 
 # Start commands
-Mojolicious::Commands->start;
+Mojolicious::Commands->start_app($app);
