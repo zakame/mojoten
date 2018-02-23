@@ -1,0 +1,69 @@
+{
+   "abstract" : "10 Mojolicious Models in 10 days",
+   "author" : [
+      "Zak B. Elep <zakame@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Minilla/v3.0.15, CPAN::Meta::Converter version 2.150010",
+   "license" : [
+      "unknown"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : 2
+   },
+   "name" : "mojoten",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "inc",
+         "share",
+         "eg",
+         "examples",
+         "author",
+         "builder"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Module::Build::Tiny" : "0.035"
+         }
+      },
+      "develop" : {
+         "requires" : {
+            "Test::CPAN::Meta" : "0",
+            "Test::MinimumVersion::Fast" : "0.04",
+            "Test::PAUSE::Permissions" : "0.04",
+            "Test::Pod" : "1.41",
+            "Test::Spellunker" : "v0.2.7"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Astro::MoonPhase" : "0",
+            "Modern::Perl" : "0",
+            "Mojolicious" : "1.80",
+            "Try::Tiny" : "0"
+         }
+      }
+   },
+   "release_status" : "unstable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/zakame/mojoten/issues"
+      },
+      "homepage" : "https://github.com/zakame/mojoten",
+      "repository" : {
+         "type" : "git",
+         "url" : "git://github.com/zakame/mojoten.git",
+         "web" : "https://github.com/zakame/mojoten"
+      }
+   },
+   "version" : "0.000001",
+   "x_contributors" : [
+      "Zak B. Elep <zakame@zakame.net>"
+   ],
+   "x_serialization_backend" : "JSON::PP version 2.97001"
+}

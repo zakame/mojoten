@@ -1,0 +1,20 @@
+#+TITLE: Models used in this app
+
+* DONE [[http://localhost:3000/randomquote][RandomQuote]]: get a random quote (or all quotes) from a <DATA>-base
+
+This is a simple, non-OO model that stores a list of quotes in its own
+<DATA> handle for retrieval via a couple of subs.  Ashley's original app
+emitted these quotations in either plain text or as a fragment of
+markup; my app expands on this by emitting quotes in JSON and using
+JavaScript to render them properly on a page.
+
+* DONE [[http://localhost:3000/moonphase][MoonPhase]]: show phase-of-moon and illumination
+
+Another simple model, also non-OO, but uses additional code from
+Astro::MoonPhase and Date::Manip.  Again, app is different from the
+original by emitting in JSON to be read by JavaScript filling a section
+of the page, as well as being able to handle bad input correctly (by
+bailing out in case of bad input via Try::Tiny.)  Still needs test
+scripts though, at least for the Perl parts.
+
+* TODO CoverImages: get some product cover images from Amazon
