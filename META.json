@@ -44,7 +44,7 @@
          "requires" : {
             "Astro::MoonPhase" : "0",
             "Modern::Perl" : "0",
-            "Mojolicious" : "1.80",
+            "Mojolicious" : "7.00",
             "Try::Tiny" : "0"
          }
       }
