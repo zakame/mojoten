@@ -79,15 +79,15 @@ following:
 =item
 
 Despite the name "Mojo Models", I'll be writing the models in such a way
-s they can be made standalone as possible, preferring to either use them
-directly in a L<Mojolicious::Controller>, or interact with them through
-an adaptor class that pulls them in via L<Mojo::Base>.  That way, I can
-pull these models out when I want, say, to do a L<Dancer>-based practice
-project instead of Mojo ;)
+as they can be made standalone as possible, preferring to either use
+them directly in a L<Mojolicious::Controller>, or interact with them
+through an adaptor class that pulls them in via L<Mojo::Base>.  That
+way, I can pull these models out when I want, say, to do a
+L<Dancer>-based practice project instead of Mojo ;)
 
 =item
 
-Practice good design as much as possible.  Not only in code, but also n
+Practice good design as much as possible.  Not only in code, but also in
 visual/print design as well.  HTML5/CSS3 offers a richer set of
 possibilities for web designs than ever before; make sure I get to use
 it!
@@ -95,7 +95,7 @@ it!
 =item
 
 Write tests for the models, where applicable.  This especially gets
-ifficult as the practice calls for enhancing the app using JavaScript,
+difficult as the practice calls for enhancing the app using JavaScript,
 so I need to learn of ways to do proper testing...
 
 =back

@@ -26,17 +26,17 @@ Aside from the aforementioned learning goals, I'm also going for the
 following:
 
 - Despite the name "Mojo Models", I'll be writing the models in such a way
-s they can be made standalone as possible, preferring to either use them
-directly in a [Mojolicious::Controller](https://metacpan.org/pod/Mojolicious::Controller), or interact with them through
-an adaptor class that pulls them in via [Mojo::Base](https://metacpan.org/pod/Mojo::Base).  That way, I can
-pull these models out when I want, say, to do a [Dancer](https://metacpan.org/pod/Dancer)-based practice
-project instead of Mojo ;)
-- Practice good design as much as possible.  Not only in code, but also n
+as they can be made standalone as possible, preferring to either use
+them directly in a [Mojolicious::Controller](https://metacpan.org/pod/Mojolicious::Controller), or interact with them
+through an adaptor class that pulls them in via [Mojo::Base](https://metacpan.org/pod/Mojo::Base).  That
+way, I can pull these models out when I want, say, to do a
+[Dancer](https://metacpan.org/pod/Dancer)-based practice project instead of Mojo ;)
+- Practice good design as much as possible.  Not only in code, but also in
 visual/print design as well.  HTML5/CSS3 offers a richer set of
 possibilities for web designs than ever before; make sure I get to use
 it!
 - Write tests for the models, where applicable.  This especially gets
-ifficult as the practice calls for enhancing the app using JavaScript,
+difficult as the practice calls for enhancing the app using JavaScript,
 so I need to learn of ways to do proper testing...
 
 # AUTHOR
