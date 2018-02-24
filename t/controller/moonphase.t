@@ -7,6 +7,8 @@ use Model::MoonPhase qw(illumination is_waxing);
 
 BEGIN { use_ok 'Mojoten' or BAIL_OUT "Mojoten is broken" }
 
+undef $::TZ;                    # silence Date::Manip::TZ warning
+
 my $t = Test::Mojo->new('Mojoten');
 $t->get_ok('/moonphase')->status_is(200)->content_like(qr/Moon Phase/i);
 

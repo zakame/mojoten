@@ -9,6 +9,8 @@ BEGIN {
     or BAIL_OUT "Can't see the moon in cloudy skies";
 }
 
+undef $::TZ;                    # silence Date::Manip::TZ warning
+
 my $date = Date::Manip::Date->new;
 my $time = "42 days ago at 5pm";
 $date->parse($time);
