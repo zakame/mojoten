@@ -13,7 +13,6 @@
       % } else {
       <div class="error"><p><%= $result %></p></div>
       % }
-      </section>
     </article>
     %= stylesheet '/css/moonphase.css'
     %= javascript '/js/jquery.form.js'
