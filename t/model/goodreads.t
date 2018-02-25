@@ -27,6 +27,7 @@ can_ok($model, qw(covers_for_title));
 dies_ok { $model->covers_for_title('perl') } 'needs auth with key';
 dies_ok { $model->covers_for_title('') } 'needs title to search';
 
+$config->{goodreads}{key} //= $ENV{GOODREADS_API_KEY};
 $model = new_ok(
   'Model::Goodreads',
   [key => $config->{goodreads}{key}],
