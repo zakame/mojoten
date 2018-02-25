@@ -1,4 +1,4 @@
-package Mojoten::MoonPhase;
+package Mojoten::Controller::MoonPhase;
 use Mojo::Base 'Mojolicious::Controller';
 
 use Model::MoonPhase qw(illumination is_waxing);

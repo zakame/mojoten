@@ -1,4 +1,4 @@
-package Mojoten::CoverImages;
+package Mojoten::Controller::CoverImages;
 use Mojo::Base 'Mojolicious::Controller';
 use Try::Tiny;
 
