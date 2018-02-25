@@ -47,6 +47,11 @@
             "Mojolicious" : "7.00",
             "Try::Tiny" : "0"
          }
+      },
+      "test" : {
+         "requires" : {
+            "Test::Exception" : "0"
+         }
       }
    },
    "release_status" : "unstable",
