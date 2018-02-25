@@ -7,11 +7,11 @@ our $VERSION = "0.000001";
 sub startup {
   my $self = shift;
 
-  # Documentation browser under "/perldoc" (this plugin requires Perl 5.10)
-  $self->plugin('PODRenderer');
+  # Load configuration from hash return by "mojoten.conf"
+  my $config = $self->plugin('Config');
 
-  # Load configuration from file
-  $self->plugin('Config');
+  # Documentation browser under "/perldoc"
+  $self->plugin('PODRenderer') if $config->{perldoc};
 
   # Routes
   my $r = $self->routes;
