@@ -45,7 +45,8 @@
             "Astro::MoonPhase" : "0",
             "Modern::Perl" : "0",
             "Mojolicious" : "7.00",
-            "Try::Tiny" : "0"
+            "Try::Tiny" : "0",
+            "perl" : "5.010"
          }
       },
       "test" : {
