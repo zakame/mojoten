@@ -16,7 +16,7 @@
           <%= text_field 'time', id => 'time', placeholder => 'now' %>
           <%= submit_button %>
         </p>
-        <% end %>
+      <% end %>
       <div id="result"></div>
     </article>
     %= javascript '/js/jquery.form.js'
