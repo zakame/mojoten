@@ -1,22 +1,11 @@
 #!/usr/bin/env perl
-use Mojo::Base -strict;
 
-use File::Basename 'dirname';
-use File::Spec;
+use strict;
+use warnings;
 
-use lib join '/', File::Spec->splitdir(dirname(__FILE__)), 'lib';
-use lib join '/', File::Spec->splitdir(dirname(__FILE__)), '..', 'lib';
+use FindBin;
+BEGIN { unshift @INC, "$FindBin::Bin/../lib" }
+use Mojolicious::Commands;
 
-# Check if Mojo is installed
-eval 'use Mojolicious::Commands';
-die <<EOF if $@;
-It looks like you don't have the Mojolicious Framework installed.
-Please visit http://mojolicio.us for detailed installation instructions.
-
-EOF
-
-# Application
-my $app ||= 'Mojoten';
-
-# Start commands
-Mojolicious::Commands->start_app($app);
+# Start command line interface for application
+Mojolicious::Commands->start_app('Mojoten');
