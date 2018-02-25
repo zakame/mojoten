@@ -1,0 +1,21 @@
+% layout 'mojoten';
+% title 'Cover Images: Result';
+    <article>
+      <header>
+        <h1>Book Covers...</h1>
+      </header>
+      <p>From the <a href="https://www.goodreads.com">Goodreads</a>...</p>
+      % if (ref $result eq 'ARRAY') {
+        <div id="result" class="success">
+          <div>
+            % for my $item (@$result) {
+              <a href="https://www.goodreads.com/book/show/<%= $item->{id} %>">
+                <img title="<%= $item->{title} %>" alt="<%= $item->{title} %>" src="<%= $item->{url} %>" />
+              </a>
+            % }
+          </div>
+        </div>
+      % } else {
+        <div class="error"><p><%= $result %></p></div>
+      % }
+    </article>

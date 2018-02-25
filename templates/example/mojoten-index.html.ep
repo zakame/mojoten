@@ -44,4 +44,18 @@
         input via Try::Tiny.)  Still needs test scripts though, at least
         for the Perl parts.</p>
       </section>
+      <section>
+        <header>
+          <h2><%= link_to Covers => 'covers' %></h2>
+          <p>Cover images via Goodreads</p>
+        </header>
+        <p>Unlike the previous models, this one exposes an OO API as it
+        requires configuration from the app.  Ashley's implementation
+        used Amazon's Product Advertising API, which has since changed
+        into a less accessible API (it now requires a distinct Amazon
+        Associates account.)  My app uses the Goodreads API instead,
+        and also is more dependent on the Mojo framework, using
+        Mojo::UserAgent (instead of LWP::UserAgent) for the API call and
+        Mojo::DOM (instead of XML::LibXML) for data extraction.</p>
+      </section>
     </article>

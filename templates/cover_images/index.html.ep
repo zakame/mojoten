@@ -1,0 +1,19 @@
+% layout 'mojoten';
+% title 'Cover Images';
+    <article>
+      <header>
+        <h1>Cover Me!</h1>
+      </header>
+      <p>What kind of art or text will I see for book covers of titles I'm looking?</p>
+      <%= form_for '/covers/title' => (id => 'm', method => 'post') => begin %>
+        <p>
+          <label for="title">Enter a title</label>
+          <%= text_field 'title', id => 'cover_title', placeholder => 'Programming Perl' %>
+          <%= submit_button %>
+        </p>
+      <% end %>
+      <div id="result"></div>
+    </article>
+    %= javascript '/js/jquery.form.js'
+    %= javascript '/js/covers.js'
+

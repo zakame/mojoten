@@ -10,6 +10,9 @@ sub startup {
   # Documentation browser under "/perldoc" (this plugin requires Perl 5.10)
   $self->plugin('PODRenderer');
 
+  # Load configuration from file
+  $self->plugin('Config');
+
   # Routes
   my $r = $self->routes;
 
@@ -28,6 +31,11 @@ sub startup {
   $r->route('/moonphase')->to('moon_phase#index');
   $r->route('/moonphase/check')->to('moon_phase#check');
   $r->route('/moonphase/*time')->to('moon_phase#check');
+
+  # Book covers
+  $r->route('/covers')->to('cover_images#index');
+  $r->route('/covers/title')->to('cover_images#get_covers');
+  $r->route('/covers/*title')->to('cover_images#get_covers');
 
   # prevent caching for JSON responses for IE (taken from
   # http://toroid.org/ams/etc/mojolicious-static-resources)
