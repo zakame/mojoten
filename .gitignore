@@ -13,3 +13,4 @@ log
 /Mojoten-*
 /.build
 !META.json
+/local/
