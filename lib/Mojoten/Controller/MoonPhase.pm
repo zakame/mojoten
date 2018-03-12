@@ -8,7 +8,7 @@ sub index { }
 
 sub check {
   my $self = shift;
-  my $time = $self->param('time') || 'now';
+  my $time = $self->req->json('/time') || $self->param('time') || 'now';
 
   try {
     my $i = illumination($time) * 100;
