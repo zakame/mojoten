@@ -111,7 +111,9 @@ footer a {
     box-shadow: rgba(0,0,0, .5) 3px 3px 6px;
 }
 @font-face {
-    src: url('/slkscr-webfont.eot'), url('/slkscr-webfont.ttf');
+    src:
+    url('/slkscr-webfont.eot') format('embedded-opentype'),
+    url('/slkscr-webfont.ttf') format('truetype');
     font-family: "Silkscreen";
 }
 .fontface h1 {
