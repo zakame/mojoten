@@ -12,7 +12,7 @@ sub index { }
 
 sub get_covers {
   my $self  = shift;
-  my $title = $self->param('title');
+  my $title = $self->param('title') || 'Programming Perl';
 
   my $r;
   try {
