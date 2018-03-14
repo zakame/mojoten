@@ -13,6 +13,9 @@ sub startup {
   # Documentation browser under "/perldoc"
   $self->plugin('PODRenderer') if $config->{perldoc};
 
+  # Load session secrets from config, falling back to moniker
+  $self->secrets($config->{secrets} || [$self->moniker]);
+
   # Routes
   my $r = $self->routes;
 
