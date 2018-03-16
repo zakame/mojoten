@@ -1,6 +1,7 @@
 .*
 !.gitignore
 !.perltidyrc
+!.jsbeautifyrc
 *~
 blib
 Makefile*
