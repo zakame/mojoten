@@ -1,5 +1,8 @@
 % layout 'mojoten';
 % title 'Cover Images';
+  <% content_for header_extra => begin %>
+    %= javascript '/js/require.js', 'data-main' => '/js/covers'
+  <% end %>
     <article>
       <header>
         <h1>Cover Me!</h1>
@@ -14,6 +17,4 @@
       <% end %>
       <div id="result"></div>
     </article>
-    %= javascript '/js/jquery.form.js'
-    %= javascript '/js/covers.js'
 

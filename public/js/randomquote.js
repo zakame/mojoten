@@ -1,14 +1,16 @@
-$(function() {
-  $('#getquote').click(function() {
-    $.getJSON("/randomquote/quote", function(data) {
+requirejs.config({ paths: { jquery: '/mojo/jquery/jquery' } });
+
+requirejs(['jquery', 'domReady!'], function ($) {
+  $('#getquote').click(function () {
+    $.getJSON("/randomquote/quote", function (data) {
       $('blockquote').empty().hide().append(data).show('slow');
     });
   });
-  $('#getallquotes').click(function() {
-    $.getJSON("/randomquote/show_all", function(data) {
+  $('#getallquotes').click(function () {
+    $.getJSON("/randomquote/show_all", function (data) {
       var items = [];
       $('#allquotes').empty();
-      $.each(data, function() {
+      $.each(data, function () {
         items.push('<li>' + this + '</li>');
       });
       $('#allquotes').append(items.join(''));

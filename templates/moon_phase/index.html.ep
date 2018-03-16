@@ -2,6 +2,7 @@
 % title 'Moon Phase';
   <% content_for header_extra => begin %>
     %= stylesheet '/css/moonphase.css'
+    %= javascript '/js/require.js', 'data-main' => '/js/moonphase'
   <% end %>
     <article>
       <header>
@@ -19,5 +20,3 @@
       <% end %>
       <div id="result"></div>
     </article>
-    %= javascript '/js/jquery.form.js'
-    %= javascript '/js/moonphase.js'

@@ -1,5 +1,8 @@
 % layout 'mojoten';
 % title 'Random Quotes';
+  <% content_for header_extra => begin %>
+    %= javascript '/js/require.js', 'data-main' => '/js/randomquote'
+  <% end %>
     <article>
       <header>
         <h1>Push button, Get quote</h1>
@@ -16,4 +19,3 @@
       <button id="getallquotes">Get all quotes</button>
       <ol id="allquotes"></ol>
     </article>
-    %= javascript '/js/randomquote.js'

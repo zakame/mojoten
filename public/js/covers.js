@@ -1,12 +1,17 @@
-$(function() {
+requirejs.config({
+  paths: { jquery: '/mojo/jquery/jquery' },
+  shim: { 'jquery.form': ['jquery'] }
+});
+
+requirejs(['jquery', 'jquery.form', 'domReady!'], function ($) {
   $('#m').ajaxForm({
-    data: {format: 'json'},
+    data: { format: 'json' },
     dataType: 'json',
     clearForm: true,
-    success: function(data) {
+    success: function (data) {
       var div = $('<div></div>');
       if (!data.error) {
-        data.forEach(function(item) {
+        data.forEach(function (item) {
           var img = $('<img>');
           img.attr('title', item.title);
           img.attr('alt', item.title);
@@ -27,9 +32,9 @@ $(function() {
         $('#result').empty().hide().append(p.append(e)).show('slow');
       }
     },
-    error: function(jqXHR, textStatus, errorThrown) {
+    error: function (jqXHR, textStatus, errorThrown) {
       var e = jqXHR.status + " " + textStatus + ": " + errorThrown;
-      $('#result'). empty().hide().append(p.append(e)).show('slow');
+      $('#result').empty().hide().append(p.append(e)).show('slow');
     }
   });
 });
