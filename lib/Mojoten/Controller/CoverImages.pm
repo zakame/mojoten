@@ -1,5 +1,7 @@
 package Mojoten::Controller::CoverImages;
 use Mojo::Base 'Mojolicious::Controller';
+no indirect;
+
 use Try::Tiny;
 
 use Model::Goodreads;

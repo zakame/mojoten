@@ -1,8 +1,10 @@
 package Mojoten::Controller::MoonPhase;
 use Mojo::Base 'Mojolicious::Controller';
+no indirect;
+
+use Try::Tiny;
 
 use Model::MoonPhase qw(illumination is_waxing);
-use Try::Tiny;
 
 sub index { }
 

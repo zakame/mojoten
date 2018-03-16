@@ -1175,3 +1175,21 @@ DISTRIBUTIONS
       perl 5.006
       strict 0
       warnings 0
+  indirect-0.38
+    pathname: V/VP/VPIT/indirect-0.38.tar.gz
+    provides:
+      indirect 0.38
+    requirements:
+      Carp 0
+      Config 0
+      ExtUtils::MakeMaker 0
+      File::Spec 0
+      IO::Handle 0
+      IO::Select 0
+      IPC::Open3 0
+      POSIX 0
+      Socket 0
+      Test::More 0
+      XSLoader 0
+      lib 0
+      perl 5.008001

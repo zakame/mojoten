@@ -1,4 +1,5 @@
 requires 'perl', '5.010';
+requires 'indirect';
 requires 'Astro::MoonPhase';
 requires 'Date::Manip', '6.00';
 requires 'IO::Socket::SSL', '>= 1.94';
