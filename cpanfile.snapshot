@@ -910,6 +910,7 @@ DISTRIBUTIONS
       IO::Socket::SSL::Utils 2.014
     requirements:
       ExtUtils::MakeMaker 0
+      Mozilla::CA 0
       Net::SSLeay 1.46
       Scalar::Util 0
   Modern-Perl-1.20170117
@@ -1070,7 +1071,6 @@ DISTRIBUTIONS
       Mojolicious::Lite undef
       Mojolicious::Plugin undef
       Mojolicious::Plugin::Config undef
-      Mojolicious::Plugin::Config::Sandbox undef
       Mojolicious::Plugin::DefaultHelpers undef
       Mojolicious::Plugin::EPLRenderer undef
       Mojolicious::Plugin::EPRenderer undef
@@ -1099,6 +1099,14 @@ DISTRIBUTIONS
       Pod::Simple 3.09
       Time::Local 1.2
       perl 5.010001
+  Mozilla-CA-20180117
+    pathname: A/AB/ABH/Mozilla-CA-20180117.tar.gz
+    provides:
+      Mozilla::CA 20180117
+    requirements:
+      ExtUtils::MakeMaker 0
+      Test 0
+      perl 5.006
   Net-SSLeay-1.84
     pathname: M/MI/MIKEM/Net-SSLeay-1.84.tar.gz
     provides:
