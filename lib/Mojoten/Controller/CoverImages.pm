@@ -13,8 +13,9 @@ has model => sub {
 sub index { }
 
 sub get_covers {
-  my $self  = shift;
-  my $title = $self->param('title') || 'Programming Perl';
+  my $self = shift;
+  my $title
+    = $self->req->json('/title') || $self->param('title') || 'Programming Perl';
 
   my $r;
   try {
