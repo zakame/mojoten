@@ -8,7 +8,7 @@ sub get_one { $Quotes[rand @Quotes] }
 
 sub get_all { wantarray ? @Quotes : [ @Quotes ] }
 
-"Quoth the raven, `Nevermore.'";
+1;
 
 __DATA__
 You should study not only that you become a mother when your child is
@@ -37,3 +37,7 @@ LOL WUT
 Oh, so they have internet on computers now!
 
 Twelve Highlanders and a bagpipe make a rebellion.
+
+Awoooooooooooooooooooooooo!
+
+Quoth the raven, `Nevermore.'

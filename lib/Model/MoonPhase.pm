@@ -21,4 +21,4 @@ sub illumination { [moonphase(shift)]->[1] }
 sub age          { [moonphase(shift)]->[2] }
 sub is_waxing    { age(shift) < (29.53 / 2) }
 
-"Awoooooooooooooooooooooooo!";
+1;
