@@ -1,32 +1,36 @@
-requirejs.config({
-  paths: { jquery: '/mojo/jquery/jquery' },
-  shim: { 'jquery.form': ['jquery'] }
-});
+requirejs.config({ paths: { jquery: '/mojo/jquery/jquery' } });
 
-requirejs(['jquery', 'jquery.form', 'domReady!'], function ($) {
-  $('#m').ajaxForm({
-    data: { format: 'json' },
-    dataType: 'json',
-    clearForm: true,
-    success: function (data) {
-      // input string parsed as date (with optional time)
-      var p = $('<p></p>');
-      if (!data.error) {
-        $('#result').attr('class', 'success');
-        var e = data.time +
-          ": The moon is at " + data.illuminated + "% full and " + data.phase;
-      }
-      else {
-        // bad input, emit error message 
-        $('#result').attr('class', 'error');
-        var e = data.error;
-      }
-      $('#result').empty().hide().append(p.append(e)).show('slow');
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      var p = $('<p></p>').addClass('error');
-      var e = jqXHR.status + " " + textStatus + ": " + errorThrown;
-      $('#result').empty().hide().append(p.append(e)).show('slow');
-    }
-  });
+require(['jquery', 'knockout', 'domReady!'], function ($, ko) {
+  'use strict';
+
+  var MoonPhaseViewModel = function () {
+    var self = this;
+
+    self.time = ko.observable('');
+    self.result = ko.observable(false);
+    self.error = ko.observable(false);
+
+    self.checkMoonPhase = function () {
+      self.result(false);
+      self.error(false);
+      $.ajax('/moonphase/check', {
+        data: ko.toJSON({ time: this.time() }),
+        dataType: 'json',
+        type: 'post',
+        contentType: 'application/json'
+      }).done(function (data) {
+        if (data.error) {
+          self.error(data);
+        }
+        else {
+          self.result(data);
+        }
+      }).fail(function (jqXHR, textStatus, errorThrown) {
+        self.error({ error: jqXHR.status + ' ' + errorThrown });
+        self.result(false);
+      }).always(function () { self.time('') });
+    };
+  };
+
+  ko.applyBindings(new MoonPhaseViewModel());
 });

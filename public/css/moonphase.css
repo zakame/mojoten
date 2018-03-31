@@ -6,15 +6,11 @@ form p label {
     margin: 5px 5px 5px 7px;
     padding: 0;
 }
-#result {
-    display: block;
-    width: 480px;
-}
-div.success {
+#success {
     border: 2px outset #666;
     background: #66ff66;
 }
-div.error {
+#error {
     border: 2px outset #666;
     background: #ff6666;
 }
@@ -25,13 +21,26 @@ div p {
     font-weight: bold;
     font-variant: small-caps;
 }
-.borderradius #result {
+.borderradius #success {
     border: 1px solid #141414;
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
 }
-.boxshadow #result {
+.boxshadow #success {
+    border: none;
+    -webkit-box-shadow: rgba(0,0,0, .5) 3px 3px 6px;
+    -moz-box-shadow: rgba(0,0,0, .5) 3px 3px 6px;
+    box-shadow: rgba(0,0,0, .5) 3px 3px 6px;
+}
+
+.borderradius #error {
+    border: 1px solid #141414;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+}
+.boxshadow #error {
     border: none;
     -webkit-box-shadow: rgba(0,0,0, .5) 3px 3px 6px;
     -moz-box-shadow: rgba(0,0,0, .5) 3px 3px 6px;

@@ -1,5 +1,8 @@
 % layout 'mojoten';
 % title 'Moon Phase: Result';
+  <%= content_for header_extra => begin %>>
+    %= stylesheet '/css/moonphase.css'
+  <% end %>
     <article>
       <header>
         <h1>The Moon Says...</h1>
@@ -14,6 +17,3 @@
       <div class="error"><p><%= $result %></p></div>
       % }
     </article>
-    %= stylesheet '/css/moonphase.css'
-    %= javascript '/js/jquery.form.js'
-    %= javascript '/js/moonphase.js'

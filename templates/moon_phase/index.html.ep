@@ -11,12 +11,31 @@
       <p>Will I turn into a werewolf tonight, or is the <a
       href="http://en.wikipedia.org/wiki/Manananggal">Manananggal</a>
       prowling...</p>
-      <%= form_for '/moonphase/check' => (id => 'm', method => 'post') => begin %>
+      <%= form_for '/moonphase/check' =>
+      (method => 'post', 'data-bind' => 'submit: checkMoonPhase') => begin %>
         <p>
           <label for="time">Enter a time</label>
-          <%= text_field 'time', id => 'time', placeholder => 'now' %>
+          <%= text_field 'time', id => 'time',
+          placeholder => 'now', 'data-bind' => 'value: time' %>
           <%= submit_button %>
         </p>
       <% end %>
-      <div id="result"></div>
+      <div data-bind="template: 'moonphase-result'"></div>
+      <div data-bind="template: 'tmpl-error'"></div>
     </article>
+    <script type="text/html" id="moonphase-result">
+      <div id="success" data-bind="with: result">
+        <p>
+          <span data-bind="text: time">Time</span>: The moon is at
+          <span data-bind="text: illuminated">XX</span>% full and
+          <span data-bind="text: phase">at this phase</span>.
+        </p>
+      </div>
+    </script>
+    <script type="text/html" id="tmpl-error">
+      <div id="error" data-bind="with: error">
+        <p>
+          Error: <span data-bind="text: error">Something happened!</span>
+        </p>
+      </div>
+    </script>
