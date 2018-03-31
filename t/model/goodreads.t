@@ -12,7 +12,7 @@ BEGIN {
 
   $config = do './mojoten.test.conf';
   if ($config->{goodreads}{key} or $ENV{GOODREADS_API_KEY}) {
-    plan tests => 13;
+    plan tests => 14;
   }
   else {
     plan skip_all => 'Needs Goodreads API developer key';
@@ -40,7 +40,7 @@ lives_ok { $result = $model->covers_for_title('perl') }
 'got results for "perl"';
 
 is(ref $result, 'ARRAY', 'got results in arrayref');
-for my $key (qw(id title url)) {
+for my $key (qw(id title url link)) {
   ok($result->[0]{$key}, "first result has key $key");
 }
 
