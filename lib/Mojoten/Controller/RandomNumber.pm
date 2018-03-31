@@ -6,6 +6,10 @@ use Try::Tiny;
 
 use Model::RandomNumber;
 
+has model => sub {
+  state $m = Model::RandomNumber->new;
+};
+
 sub index { }
 
 sub get {
@@ -17,7 +21,7 @@ sub get {
 
   try {
     $self->render(
-      text => Model::RandomNumber->new(lower => $lower, upper => $upper)
+      text => $self->model->tap(lower => $lower)->tap(upper => $upper)
         ->generate(integer => $int));
   }
   catch {
