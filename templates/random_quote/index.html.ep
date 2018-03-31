@@ -8,14 +8,16 @@
         <h1>Push button, Get quote</h1>
       </header>
       <p>I wonder what quote will I get...</p>
-      <button id="getquote">Get a quote</button>
-      <blockquote>Receive quote here...</blockquote>
+      <button data-bind="click: getQuote">Get a quote</button>
+      <blockquote data-bind="text: quote">Receive quote here...</blockquote>
     </article>
     <article>
       <header>
         <h1>List all quotes</h1>
       </header>
       <p>Get all known quotes...</p>
-      <button id="getallquotes">Get all quotes</button>
-      <ol id="allquotes"></ol>
+      <button data-bind="click: getAllQuotes">Get all quotes</button>
+      <ol data-bind="foreach: quotes">
+        <li data-bind="text: $data"></li>
+      </ol>
     </article>
