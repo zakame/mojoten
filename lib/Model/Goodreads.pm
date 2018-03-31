@@ -21,8 +21,13 @@ sub covers_for_title {
       my ($id, $title, $url)
         = ($_->at('id'), $_->at('title'), $_->at('image_url'));
       return if $url =~ /nophoto/;
-      push @$covers =>
-        {id => $id->text, title => $title->text, url => $url->text};
+      my $link = join '' => 'https://www.goodreads.com/book/show/', $id->text;
+      push @$covers => {
+        id    => $id->text,
+        link  => $link,
+        title => $title->text,
+        url   => $url->text
+      };
     });
   }
   else {
