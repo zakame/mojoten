@@ -9,7 +9,7 @@
         <div id="result" class="success">
           <div>
             % for my $item (@$result) {
-              <a href="https://www.goodreads.com/book/show/<%= $item->{id} %>">
+              <a href="<%= $item->{link} %>">
                 <img title="<%= $item->{title} %>" alt="<%= $item->{title} %>" src="<%= $item->{url} %>" />
               </a>
             % }
