@@ -1,0 +1,21 @@
+% layout 'mojoten';
+% title 'Random Numbers';
+  <% content_for header_extra => begin %>
+    %= javascript '/js/require.js', 'data-main' => '/js/randomnumber'
+  <% end %>
+    <article>
+      <header>
+        <h1>Roll d6...</h1>
+      </header>
+      <p data-bind="with: randomNumber">
+        Yer luckee numbah for today is
+        <span data-bind="text: $data"></span>
+      </p>
+      <p>
+        Or perhaps you want to roll a six-sided die?
+        <%= submit_button 'Roll', 'data-bind' => 'click: rollD6' %>
+      </p>
+      <p data-bind="with: rollResult">
+        You rolled a <strong><span data-bind="text: $data"></span></strong>
+      </p>
+    </article>

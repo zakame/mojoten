@@ -40,6 +40,12 @@ sub startup {
   $r->route('/covers/title')->to('cover_images#get_covers');
   $r->route('/covers/*title')->to('cover_images#get_covers');
 
+  # Random numbers
+  $r->route('/randomnumber')->to('random_number#index');
+  $r->route('/randomnumber/get')->to('random_number#get');
+  $r->route('/randomnumber/d6')
+    ->to('random_number#get', lower => 1, upper => 6, integer => 1);
+
   # prevent caching for JSON responses for IE (taken from
   # http://toroid.org/ams/etc/mojolicious-static-resources)
   $self->hook(after_dispatch => sub {
