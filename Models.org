@@ -26,3 +26,9 @@ API (it now requires a distinct Amazon Associates account.)  My app uses
 the Goodreads API instead, and also is more dependent on the Mojo
 framework, using Mojo::UserAgent (instead of LWP::UserAgent) for the API
 call and Mojo::DOM (instead of XML::LibXML) for data extraction.
+
+* TODO [[http://localhost:3000/randomnumber][RandomNumber]]: get a random number
+
+This model is meant to be an example of growing a model from one simple
+implementation to another: coming from local usage of =rand()= to using a
+remote API from [[https://www.random.org/clients/http/][Random.org]].
