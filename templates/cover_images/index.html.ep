@@ -7,14 +7,22 @@
       <header>
         <h1>Cover Me!</h1>
       </header>
-      <p>What kind of art or text will I see for book covers of titles I'm looking?</p>
-      <%= form_for '/covers/title' => (id => 'm', method => 'post') => begin %>
+      <p>
+        What kind of art or text will I see for book covers of titles
+        I'm looking?
+      </p>
+      <%= form_for '/covers/title' =>
+      (method => 'post',
+        'data-bind' => 'submit: getCoversForTitle') => begin %>
         <p>
           <label for="title">Enter a title</label>
-          <%= text_field 'title', id => 'cover_title', placeholder => 'Programming Perl' %>
+          <%= text_field 'title', id => 'cover_title',
+          placeholder => 'Programming Perl',
+          'data-bind' => 'value: coverTitle' %>
           <%= submit_button %>
         </p>
       <% end %>
-      <div id="result"></div>
+      <cover-images params="result: result, error: error, visible: isLoading">
+      </cover-images>
     </article>
 

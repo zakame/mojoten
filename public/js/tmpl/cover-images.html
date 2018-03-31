@@ -1,0 +1,13 @@
+<!-- -*- mode: web -*- -->
+<span data-bind="visible: visible">Loading...</span>
+<div data-bind="foreach: { data: result, as: 'item' }">
+  <a data-bind="attr: { href: item.link }">
+    <img
+      data-bind="attr: { alt: item.title, src: item.url, title: item.title }"/>
+  </a>
+</div>
+<div id="error" data-bind="with: error">
+  <p>
+    Error: <span data-bind="text: error">Something happened!</span>
+  </p>
+</div>

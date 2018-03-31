@@ -1,40 +1,50 @@
-requirejs.config({
-  paths: { jquery: '/mojo/jquery/jquery' },
-  shim: { 'jquery.form': ['jquery'] }
-});
+requirejs.config({ paths: { jquery: '/mojo/jquery/jquery' } });
 
-requirejs(['jquery', 'jquery.form', 'domReady!'], function ($) {
-  $('#m').ajaxForm({
-    data: { format: 'json' },
-    dataType: 'json',
-    clearForm: true,
-    success: function (data) {
-      var div = $('<div></div>');
-      if (!data.error) {
-        data.forEach(function (item) {
-          var img = $('<img>');
-          img.attr('title', item.title);
-          img.attr('alt', item.title);
-          img.attr('src', item.url);
+require(['jquery', 'knockout', 'domReady!'], function ($, ko) {
+  'use strict';
 
-          var a = $('<a>');
-          a.attr('href', 'https://www.goodreads.com/book/show/' + item.id);
-          a.append(img);
-
-          div.append(a);
-        });
-
-        $('#result').empty().hide().append(div).show('slow');
-      }
-      else {
-        var p = $('<p></p>');
-        var e = data.error;
-        $('#result').empty().hide().append(p.append(e)).show('slow');
-      }
+  ko.components.register('cover-images', {
+    viewModel: function (params) {
+      this.result = params.result;
+      this.error = params.error;
+      this.visible = params.visible;
     },
-    error: function (jqXHR, textStatus, errorThrown) {
-      var e = jqXHR.status + " " + textStatus + ": " + errorThrown;
-      $('#result').empty().hide().append(p.append(e)).show('slow');
-    }
+    template: { require: 'text!tmpl/cover-images.html' }
   });
+
+  var CoverImagesViewModel = function () {
+    var self = this;
+
+    self.coverTitle = ko.observable('');
+    self.result = ko.observable(false);
+    self.error = ko.observable(false);
+
+    self.isLoading = ko.observable(false);
+
+    self.getCoversForTitle = function () {
+      self.result(false);
+      self.error(false);
+      self.isLoading(true);
+
+      $.ajax('/covers/title', {
+        data: ko.toJSON({ title: this.coverTitle() }),
+        dataType: 'json',
+        type: 'post',
+        contentType: 'application/json'
+      }).done(function (data) {
+        if (data.error)
+          self.error(data);
+        else
+          self.result(data);
+      }).fail(function (jqXHR, textStatus, errorThrown) {
+        self.error({ error: jqXHR.status + ' ' + errorThrown });
+        self.result(false);
+      }).always(function () {
+        self.coverTitle('');
+        self.isLoading(false);
+      });
+    };
+  };
+
+  ko.applyBindings(new CoverImagesViewModel());
 });
