@@ -27,8 +27,12 @@ the Goodreads API instead, and also is more dependent on the Mojo
 framework, using Mojo::UserAgent (instead of LWP::UserAgent) for the API
 call and Mojo::DOM (instead of XML::LibXML) for data extraction.
 
-* TODO [[http://localhost:3000/randomnumber][RandomNumber]]: get a random number
+* DONE [[http://localhost:3000/randomnumber][RandomNumber]]: get a random number
 
 This model is meant to be an example of growing a model from one simple
 implementation to another: coming from local usage of =rand()= to using a
-remote API from [[https://www.random.org/clients/http/][Random.org]].
+remote API from [[https://www.random.org/clients/http/][Random.org]].  The remote API has changed a bit since
+Ashley's original implementation, as Random.org now exposes a JSON-RPC
+API in addition to their HTTP interface.  Thus, my app uses this newer
+API through an addition of a generator for Mojo::UserAgent, leveraging
+its native capabilities for JSON.

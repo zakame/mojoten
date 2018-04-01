@@ -58,4 +58,18 @@
         Mojo::UserAgent (instead of LWP::UserAgent) for the API call and
         Mojo::DOM (instead of XML::LibXML) for data extraction.</p>
       </section>
+      <section>
+        <header>
+          <h2><%= link_to RandomNumer => 'randomnumber' %></h2>
+          <p>Random Number from rand() and JSON-RPC</p>
+        </header>
+        <p>This model is meant to be an example of growing a model from
+          one simple implementation to another: coming from local usage
+          of rand() to using a remote API from Random.org.  The remote
+          API has changed a bit since Ashley's original implementation,
+          as Random.org now exposes a JSON-RPC API in addition to their
+          HTTP interface.  Thus, my app uses this newer API through an
+          addition of a generator for Mojo::UserAgent, leveraging its
+          native capabilities for JSON.</p>
+      </section>
     </article>
