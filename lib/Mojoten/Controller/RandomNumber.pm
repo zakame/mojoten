@@ -7,7 +7,8 @@ use Try::Tiny;
 use Model::RandomNumber;
 
 has model => sub {
-  state $m = Model::RandomNumber->new;
+  state $m
+    = Model::RandomNumber->new(key => shift->app->config->{randomorg}{key});
 };
 
 sub index { }

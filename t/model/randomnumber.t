@@ -1,11 +1,23 @@
 #!/usr/bin/env perl
-use strict;
-use warnings;
-
-use Test::More tests => 9;
+use Modern::Perl;
+use IO::Socket::IP;
+use Test::More;
 use Test::Exception;
 
+my $config;
+
 BEGIN {
+  plan skip_all => 'Needs access to Random.org'
+    unless IO::Socket::IP->new(PeerHost => 'api.random.org:https');
+
+  $config = do './mojoten.test.conf';
+  if ($config->{randomorg}{key} or $ENV{RANDOMORG_API_KEY}) {
+    plan tests => 11;
+  }
+  else {
+    plan skip_all => 'Needs Random.org API key';
+  }
+
   use_ok('Model::RandomNumber') or BAIL_OUT "Can't get random numbers";
 }
 
@@ -19,6 +31,11 @@ $model
 dies_ok { $model->generate } 'lower greater than upper';
 
 $args = [lower => 0, upper => 9];
+$model = new_ok('Model::RandomNumber', $args,
+  'Model::RandomNumber for integer result but no API key');
+dies_ok { $model->generate(integer => 1) } 'no API key set';
+
+$args = [lower => 0, upper => 9, key => $config->{randomorg}{key}];
 $model = new_ok('Model::RandomNumber', $args,
   'Model::RandomNumber for integer result');
 ok(
