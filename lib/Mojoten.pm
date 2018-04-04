@@ -46,12 +46,11 @@ sub startup {
   $r->route('/randomnumber/d6')
     ->to('random_number#get', lower => 1, upper => 6, integer => 1);
 
-  # prevent caching for JSON responses for IE (taken from
-  # http://toroid.org/ams/etc/mojolicious-static-resources)
+  # prevent caching for dynamic responses, especially. for IE (taken
+  # from http://toroid.org/ams/etc/mojolicious-static-resources)
   $self->hook(after_dispatch => sub {
     my $tx   = shift;
-    my $type = $tx->res->headers->content_type;
-    return unless $type and $type =~ /json/;
+    return if $tx->res->headers->header('Expires');
     $tx->res->headers->header(
       Expires => Mojo::Date->new(time-365*86400)
     );
