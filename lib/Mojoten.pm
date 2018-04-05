@@ -48,16 +48,14 @@ sub startup {
 
   # prevent caching for dynamic responses, especially. for IE (taken
   # from http://toroid.org/ams/etc/mojolicious-static-resources)
-  $self->hook(after_dispatch => sub {
-    my $tx   = shift;
-    return if $tx->res->headers->header('Expires');
-    $tx->res->headers->header(
-      Expires => Mojo::Date->new(time-365*86400)
-    );
-    $tx->res->headers->header(
-      'Cache-Control' => 'max-age=1, no-cache'
-    );
-  });
+  $self->hook(
+    after_dispatch => sub {
+      my $tx = shift;
+      return if $tx->res->headers->header('Expires');
+      $tx->res->headers->header(Expires => Mojo::Date->new(time - 365 * 86400));
+      $tx->res->headers->header('Cache-Control' => 'max-age=1, no-cache');
+    }
+  );
 }
 
 1;
