@@ -4,7 +4,7 @@ requires 'Astro::MoonPhase';
 requires 'Date::Manip', '6.00';
 requires 'IO::Socket::SSL', '>= 1.94';
 requires 'Modern::Perl';
-requires 'Mojolicious', '7.00';
+requires 'Mojolicious', '8.12';
 requires 'Try::Tiny';
 
 test_requires 'Test::Exception';

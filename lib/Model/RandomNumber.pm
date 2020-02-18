@@ -49,11 +49,11 @@ sub _generate_integer {
     jsonrpc => generateIntegers =>
       {apiKey => $self->key, max => $self->upper, min => $self->lower, n => 1});
 
-  if (my $res = $tx->success) {
-    if (my $error = $res->json->{error}) {
+  if ($tx->res->is_success) {
+    if (my $error = $tx->res->json->{error}) {
       croak "Error in RPC: ", $error->{message};
     }
-    $res->json->{result}{random}{data}[0];
+    $tx->res->json->{result}{random}{data}[0];
   }
   else {
     carp "Failed to make RPC: ", $tx->error->{message};

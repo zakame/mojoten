@@ -16,8 +16,8 @@ sub covers_for_title {
 
   my $covers = [];
   my $tx     = $self->ua->get($url);
-  if (my $res = $tx->success) {
-    $res->dom->find('best_book')->each(sub {
+  if ($tx->res->is_success) {
+    $tx->res->dom->find('best_book')->each(sub {
       my ($id, $title, $url)
         = ($_->at('id'), $_->at('title'), $_->at('image_url'));
       return if $url =~ /nophoto/;

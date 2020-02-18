@@ -10,9 +10,6 @@ sub startup {
   # Load configuration from hash return by "mojoten.conf"
   my $config = $self->plugin('Config');
 
-  # Documentation browser under "/perldoc"
-  $self->plugin('PODRenderer') if $config->{perldoc};
-
   # Load session secrets from config, falling back to moniker
   $self->secrets($config->{secrets} || [$self->moniker]);
 
