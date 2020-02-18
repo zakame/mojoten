@@ -19,7 +19,7 @@ has ua => sub {
         my $obj = {id => $id, jsonrpc => '2.0', method => $method};
         $obj->{params} = $params if $params;
         $tx->req->body(encode_json $obj)
-          ->headers->content_type('application/json-rpc');
+          ->headers->content_type('application/json');
       }
     );
   });
@@ -45,7 +45,7 @@ sub _generate_integer {
 
   croak 'no API key set' unless $self->key;
 
-  my $tx = $self->ua->post('https://api.random.org/json-rpc/1/invoke',
+  my $tx = $self->ua->post('https://api.random.org/json-rpc/2/invoke',
     jsonrpc => generateIntegers =>
       {apiKey => $self->key, max => $self->upper, min => $self->lower, n => 1});
 
