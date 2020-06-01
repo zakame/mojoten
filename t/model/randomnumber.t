@@ -11,7 +11,7 @@ BEGIN {
     unless IO::Socket::IP->new(PeerHost => 'api.random.org:https');
 
   $config = do './mojoten.test.conf';
-  if ($config->{randomorg}{key} or $ENV{RANDOMORG_API_KEY}) {
+  if ($config->{randomorg}{key} //= $ENV{RANDOMORG_API_KEY}) {
     plan tests => 11;
   }
   else {

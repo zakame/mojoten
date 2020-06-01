@@ -11,7 +11,7 @@ BEGIN {
     unless IO::Socket::IP->new(PeerHost => 'www.goodreads.com:https');
 
   $config = do './mojoten.test.conf';
-  if ($config->{goodreads}{key} or $ENV{GOODREADS_API_KEY}) {
+  if ($config->{goodreads}{key} //= $ENV{GOODREADS_API_KEY}) {
     plan tests => 14;
   }
   else {
@@ -27,7 +27,6 @@ can_ok($model, qw(covers_for_title));
 dies_ok { $model->covers_for_title('perl') } 'needs auth with key';
 dies_ok { $model->covers_for_title('') } 'needs title to search';
 
-$config->{goodreads}{key} //= $ENV{GOODREADS_API_KEY};
 $model = new_ok(
   'Model::Goodreads',
   [key => $config->{goodreads}{key}],
