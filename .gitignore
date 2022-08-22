@@ -15,3 +15,7 @@ log
 /.build
 !META.json
 /local/
+
+
+# Ignore DevSpace cache and log folder
+.devspace/
