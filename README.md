@@ -10,7 +10,7 @@ Mojoten - 10 Mojolicious Models in 10 days
 # DESCRIPTION
 
 This project is inspired by [10 Catalyst Models in 10
-Days](http://sedition.com/a/2733) by Ashley Pond V, using
+Days](http://web.archive.org/web/20201109042404/http://sedition.com/a/2733) by Ashley Pond V, using
 [Mojolicious](http://mojolicious.org) for the web framework instead of
 Catalyst.  I started this mainly so I can practice writing Modern Perl
 while also learning more about writing good HTML5 and JavaScript.  Aside
