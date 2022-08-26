@@ -3,7 +3,7 @@ use Mojo::Base -strict;
 
 use Test::More tests => 24;
 use Test::Mojo;
-use Model::Goodreads;
+use Model::OpenLibrary;
 use Test::MockModule;
 
 BEGIN { use_ok 'Mojoten' or BAIL_OUT "Mojoten is broken" }
@@ -27,7 +27,7 @@ my $result = [
 ];
 
 
-my $mock = Test::MockModule->new('Model::Goodreads');
+my $mock = Test::MockModule->new('Model::OpenLibrary');
 $mock->mock(covers_for_title => sub {$result});
 
 my $t = Test::Mojo->new('Mojoten');

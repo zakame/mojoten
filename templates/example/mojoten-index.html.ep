@@ -5,7 +5,7 @@
         <h1>About</h1>
       </header>
       <p>This project is inspired by <a
-      href="http://sedition.com/a/2733">10 Catalyst Models in 10
+      href="http://web.archive.org/web/20201109042404/http://sedition.com/a/2733">10 Catalyst Models in 10
       Days</a> by Ashley Pond V, using <a
       href="http://mojolicious.org">Mojolicious</a> for the web
       framework instead of Catalyst.  I started this mainly so I can
@@ -47,13 +47,13 @@
       <section>
         <header>
           <h2><%= link_to Covers => 'covers' %></h2>
-          <p>Cover images via Goodreads</p>
+          <p>Cover images via OpenLibrary</p>
         </header>
         <p>Unlike the previous models, this one exposes an OO API as it
         requires configuration from the app.  Ashley's implementation
         used Amazon's Product Advertising API, which has since changed
         into a less accessible API (it now requires a distinct Amazon
-        Associates account.)  My app uses the Goodreads API instead,
+        Associates account.)  My app uses the OpenLibrary API instead,
         and also is more dependent on the Mojo framework, using
         Mojo::UserAgent (instead of LWP::UserAgent) for the API call and
         Mojo::DOM (instead of XML::LibXML) for data extraction.</p>

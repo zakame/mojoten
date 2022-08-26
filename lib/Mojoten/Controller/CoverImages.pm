@@ -4,10 +4,10 @@ no indirect;
 
 use Try::Tiny;
 
-use Model::Goodreads;
+use Model::OpenLibrary;
 
 has model => sub {
-  state $m = Model::Goodreads->new(key => shift->app->config->{goodreads}{key});
+  state $m = Model::OpenLibrary->new;
 };
 
 sub index { }
